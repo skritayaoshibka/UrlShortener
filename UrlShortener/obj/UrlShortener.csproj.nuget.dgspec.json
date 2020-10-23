@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VSProjects\\ASPNETProjects\\UrlShortener\\UrlShortener\\UrlShortener.csproj": {}
+    "/hdd/Programming/ASPNetProjects/UrlShortener/UrlShortener/UrlShortener.csproj": {}
   },
   "projects": {
-    "D:\\VSProjects\\ASPNETProjects\\UrlShortener\\UrlShortener\\UrlShortener.csproj": {
+    "/hdd/Programming/ASPNetProjects/UrlShortener/UrlShortener/UrlShortener.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VSProjects\\ASPNETProjects\\UrlShortener\\UrlShortener\\UrlShortener.csproj",
+        "projectUniqueName": "/hdd/Programming/ASPNetProjects/UrlShortener/UrlShortener/UrlShortener.csproj",
         "projectName": "UrlShortener",
-        "projectPath": "D:\\VSProjects\\ASPNETProjects\\UrlShortener\\UrlShortener\\UrlShortener.csproj",
-        "packagesPath": "C:\\Users\\Дмитрий\\.nuget\\packages\\",
-        "outputPath": "D:\\VSProjects\\ASPNETProjects\\UrlShortener\\UrlShortener\\obj\\",
+        "projectPath": "/hdd/Programming/ASPNetProjects/UrlShortener/UrlShortener/UrlShortener.csproj",
+        "packagesPath": "/home/skrosh/.nuget/packages/",
+        "outputPath": "/hdd/Programming/ASPNetProjects/UrlShortener/UrlShortener/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Дмитрий\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/skrosh/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,6 +51,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.8, 3.1.8]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -61,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.108/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +24,7 @@ namespace UrlShortener
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddControllersWithViews();
         }
 
@@ -52,6 +54,11 @@ namespace UrlShortener
                     name: "shorturl",
                     pattern: "/{shortUrl}",
                     defaults: new { controller = "URL", action = "GetFullUrl" });
+                
+                endpoints.MapControllerRoute(
+                    name: "homepage",
+                    pattern: "/{action}/{model}",
+                    defaults: new { controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute(
                     name: "default",

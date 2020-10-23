@@ -1,0 +1,23 @@
+@model UrlShortener.Models.URLModel
+
+@{
+    ViewData["Title"] = "Short URL generated";
+}
+
+<div class="mx-auto w-75 m-3">
+    <h2 class="text-center mb-2">Сокращенная ссылка сгенерирована ссылки</h2>
+    <hr/>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Ваша ссылка</span>
+        </div>
+        <input name="fullUrl" class="form-control" readonly value="@Model.FullUrl"/>
+    </div>
+    
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Короткая ссылка</span>
+        </div>
+        <input name="fullUrl" class="form-control" readonly value="@Model.ShortUrl"/>
+    </div>
+</div>
