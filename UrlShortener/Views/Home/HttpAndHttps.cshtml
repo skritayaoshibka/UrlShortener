@@ -1,0 +1,22 @@
+@model HttpAndHttpsViewModel
+@{
+    ViewData["Title"] = "Http and https";
+}
+
+<h3>Http и Https ссылки</h3>
+<div>
+    <h4>Http</h4>
+    @foreach (var item in Model.HttpUrls)
+    {
+        <p>@item</p>
+    }
+</div>
+<br>
+<br>
+<div>
+    <h4>Https</h4>
+    @foreach (var item in Model.HttpsUrls)
+    {
+        <p>@item</p>
+    }
+</div>

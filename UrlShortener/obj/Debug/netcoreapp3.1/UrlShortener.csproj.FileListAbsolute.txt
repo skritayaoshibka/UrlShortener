@@ -80,3 +80,5 @@ D:/VSProjects/ASPNETProjects/UrlShortener/UrlShortener/obj/Debug/netcoreapp3.1/U
 /hdd/Programming/ASPNetProjects/UrlShortener/UrlShortener/obj/Debug/netcoreapp3.1/UrlShortener.dll
 /hdd/Programming/ASPNetProjects/UrlShortener/UrlShortener/obj/Debug/netcoreapp3.1/UrlShortener.pdb
 /hdd/Programming/ASPNetProjects/UrlShortener/UrlShortener/obj/Debug/netcoreapp3.1/Razor/Views/Home/ShowShortUrl.cshtml.g.cs
+/hdd/Programming/ASPNetProjects/UrlShortener/UrlShortener/obj/Debug/netcoreapp3.1/Razor/Views/Home/History.cshtml.g.cs
+/hdd/Programming/ASPNetProjects/UrlShortener/UrlShortener/obj/Debug/netcoreapp3.1/Razor/Views/Home/HttpAndHttps.cshtml.g.cs
