@@ -1,15 +1,16 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UrlShortener.Models;
+using UrlShortener.Redis;
 
 namespace UrlShortener.Controllers
 {
     public class HomeController : Controller
     {
-        private URLController urlController;
+        private URLController _urlController;
         public HomeController(IHttpContextAccessor httpContextAccessor)
         {
-            urlController = new URLController(httpContextAccessor);
+            _urlController = new URLController(httpContextAccessor);
         }
 
         public IActionResult Index()
@@ -30,14 +31,14 @@ namespace UrlShortener.Controllers
 
         public IActionResult History()
         {
-            return View(urlController.GetHistory());
+            return View(_urlController.GetHistory());
         }
 
         public IActionResult HttpAndHttps()
         {
             var vm = new HttpAndHttpsViewModel();
-            vm.HttpUrls = urlController.GetHttpUrlsList();
-            vm.HttpsUrls = urlController.GetHttpsUrlsList();
+            vm.HttpUrls = _urlController.GetHttpUrlsList();
+            vm.HttpsUrls = _urlController.GetHttpsUrlsList();
 
             return View(vm);
         } 
