@@ -11,6 +11,7 @@ namespace UrlShortener.Redis
         private ConnectionMultiplexer _connection;
         private IDatabase _db;
 
+
         private RedisCommands()
         {
             _connection = ConnectionMultiplexer.Connect("localhost");
@@ -246,6 +247,8 @@ namespace UrlShortener.Redis
                 }
             }
 
+            
+
             return urls;
         }
 
@@ -275,6 +278,30 @@ namespace UrlShortener.Redis
             }
         }
 
+        //Добавление ссылки в упорядоченный список
+        public void AddUrlInSortedSet(string url)
+        {
+            if (url != null)
+            {
+                _db.SortedSetAdd("history", url, _db.SortedSetRangeByRank("history").Length+1);
+            }
+        }
+
+        //Получение ссылок из упорядоченного списка
+        public Dictionary<string, string> GetUrlsFromSortedSet()
+        {
+            var urls = new Dictionary<string, string>();
+
+            var urlsFromHistory = _db.SortedSetRangeByRank("history");
+
+            foreach(var url in urlsFromHistory)
+            {
+                var score = _db.SortedSetScore("history", url).ToString();
+                urls.Add(score ,url.ToString());
+            }
+
+            return urls;
+        }
         
         //Получение ссылок из множества http-ссылок
         public List<string> GetHttpUrlsList()

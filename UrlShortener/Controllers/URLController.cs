@@ -72,8 +72,11 @@ namespace UrlShortener.Controllers
                 //добавляем ссылки в список, который будет оображаться в истории
                 _redis.AddUrlInList(shortUrl, fullUrl);
 
-                //добавление ссылки во множества http и https ссылок
+                //добавленяем ссылку во множества http и https ссылок
                 _redis.AddUrlToSet(fullUrl);
+
+                //добавляемы ссылки в упорядоченное множество
+                _redis.AddUrlInSortedSet(shortUrl+ " " + fullUrl);
 
                 return RedirectToAction("ShowShortUrl", "Home", new URLModel {FullUrl = fullUrl, ShortUrl = shortUrl});
             }
@@ -81,7 +84,7 @@ namespace UrlShortener.Controllers
             return NotFound();
         }
 
-        public List<string> GetHistory()
+        public List<string> GetHistoryFromList()
         {
             string key = new StringBuilder(DateTime.Now.Day)
                                 .Append(".")
@@ -89,6 +92,11 @@ namespace UrlShortener.Controllers
                                 .ToString();
 
             return  _redis.GetAllUrlsFromList(key);
+        }
+
+        public Dictionary<string, string> GetHistoryFromSortedSet()
+        {
+            return _redis.GetUrlsFromSortedSet();
         }
 
         private bool CheckUrlStartsWithHttpOrHttps(string url)

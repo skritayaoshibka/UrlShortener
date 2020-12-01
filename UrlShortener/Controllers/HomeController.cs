@@ -29,9 +29,14 @@ namespace UrlShortener.Controllers
             return View();
         }
 
-        public IActionResult History()
+        public IActionResult HistoryFromList()
         {
-            return View(_urlController.GetHistory());
+            return View(_urlController.GetHistoryFromList());
+        }
+
+        public IActionResult HistoryFromSortedSet()
+        {
+            return View(_urlController.GetHistoryFromSortedSet());
         }
 
         public IActionResult HttpAndHttps()

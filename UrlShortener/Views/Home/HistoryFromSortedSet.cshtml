@@ -1,6 +1,6 @@
-@model List<string>
+@model Dictionary<string, string>
 @{
-    ViewData["Title"] = "History";
+    ViewData["Title"] = "History From Sorted Set";
 }
 
 <h3>История за сегодня</h3>
@@ -8,6 +8,7 @@
  <table class="table">
   <thead class="thead-dark">
     <tr>
+      <th scope="col">№</th>
       <th scope="col">Укороченная ссылка</th>
       <th scope="col">Полная ссылка</th>
     </tr>
@@ -15,8 +16,9 @@
   <tbody>
     @foreach (var item in Model)
     {
-        var urls = item.Split();
+        var urls = item.Value.Split();
         <tr>
+            <td>@item.Key</td>
             <td>@urls[0]</td>
             <td>@urls[1]</td>
         </tr>
